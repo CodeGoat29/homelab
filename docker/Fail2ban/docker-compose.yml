@@ -14,5 +14,4 @@ services:
     volumes:
       - /opt/fail2ban:/config
       - /var/log:/var/log:ro
-      - /path/to/nginx-proxy-manager/logs:/remotelogs/nginx:ro
     restart: unless-stopped
