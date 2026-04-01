@@ -1,13 +1,13 @@
 [DEFAULT]
-bantime = 1h
+bantime = 24h
 findtime = 10m
-maxretry = 5
+maxretry = 3
+usedns = no
+ignoreip = 127.0.0.1/8
+bantime.increment = true
 
 [sshd]
 enabled = true
 backend = systemd
-journalmatch = _SYSTEMD_UNIT=sshd.service + _COMM=sshd
+journalmatch = _SYSTEMD_UNIT=ssh.service + _COMM=sshd
 port = ssh
-maxretry = 5
-findtime = 10m
-bantime = 1h
