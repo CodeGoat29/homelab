@@ -2,14 +2,12 @@
 bantime = 1h
 findtime = 10m
 maxretry = 5
-chain = INPUT
-banaction = iptables-multiport
-backend = auto
 
 [sshd]
 enabled = true
+backend = systemd
+journalmatch = _SYSTEMD_UNIT=ssh.service + _COMM=sshd
 port = ssh
-logpath = /var/log/auth.log
 maxretry = 5
 findtime = 10m
 bantime = 1h
