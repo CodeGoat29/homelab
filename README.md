@@ -47,3 +47,21 @@ docker compose -f docker/homarr/compose.yaml up -d
 ```
 
 After it starts, open `http://<docker-host-ip>:7575`.
+
+### Jellyfin
+
+Jellyfin provides media streaming. Its Compose configuration is located at `docker/jellyfin/compose.yaml`.
+
+The host media directory must exist before the first start:
+
+```bash
+sudo mkdir -p /srv/media
+```
+
+Start Jellyfin from the repository root:
+
+```bash
+docker compose -f docker/jellyfin/compose.yaml up -d
+```
+
+After it starts, open `http://<docker-host-ip>:8096`. The media directory is mounted read-only at `/media` inside the container.
